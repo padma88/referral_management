@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import ErrorBoundary from "./ErrorBoudary";
+
+import Layout from "./Components/Layout";
+import Login from "./Components/LoginAndSignup/Login";
+import Signup from "./Components/LoginAndSignup/Signup";
+import Dashboard from "./Components/Dashboard";
+import List from "./Components/Users/List";
+
+import ProtectedRoutes from "./protected.route";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoutes>
+              <Layout>
+                <Dashboard />
+              </Layout>
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoutes>
+              <Layout>
+                <List />
+              </Layout>
+            </ProtectedRoutes>
+          }
+        />
+      </Routes>
+    </ErrorBoundary>
   );
 }
 

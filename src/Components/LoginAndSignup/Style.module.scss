@@ -1,0 +1,43 @@
+.containerFluid {
+    background: linear-gradient(to bottom, #654a86, #534292);
+    height: max-content;
+    min-height: 100vh;
+    padding-bottom: 50px
+}
+.section {
+    padding-top: 50px;
+    h1 {
+        color: #fff;
+        text-align: center;
+    }
+}
+.form {
+    padding: 3%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 30vw;
+    min-width: 450px;
+    .header {
+        text-align: center;
+        color: #534292;
+    }
+    button {
+        background: linear-gradient(to bottom,#654a86,#534292);
+    }
+    .registerLink {
+        text-align: center;
+        margin-top: 10px;
+        a {
+            color: #534292;
+            text-decoration: none;        
+        }
+        a:hover {
+            border-bottom: 1px solid #534292;  
+        }
+    }
+}
+.formGroup{
+    display: grid;
+    padding: 2%
+}
