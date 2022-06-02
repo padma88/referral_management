@@ -8,4 +8,13 @@ function create(data) {
     return http.post("/user", data);
 }
 
-export { loginService, create };
+
+function fetchUser(data) {
+  return http.get("/user/" + data);
+}
+
+function fetchAllUsers(data) {
+  return http.post("/user/fetch-all", data);
+}
+
+export { loginService, create, fetchUser, fetchAllUsers };

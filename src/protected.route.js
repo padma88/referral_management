@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom"
+import Layout from "./Components/Layout";
 
-function ProtectedRoutes({children}) {
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
-  console.log(isLoggedIn)
-  if (isLoggedIn) {
+function ProtectedRoutes({component}) {
+  const isLoggedIn = localStorage.getItem("access-token");
+  if (!isLoggedIn) {
     return <Navigate to="/login" />;
-  } return children;
+  } return <Layout>{component}</Layout>
 }
 
 export default ProtectedRoutes;

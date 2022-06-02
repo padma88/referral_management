@@ -1,15 +1,23 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-const Section = styled.section`
+const Section = styled.section.attrs(props => props)`
   position: fixed;
-  left: 0;
-  top: 61px;
+  top: 60px;
   padding: 2em;
-  background: #55465e;
+  background: ${props => props.secondary};
   height: 100vh;
   width: 10vh;
   min-width: fit-content;
   z-index: 1;
+  ${'' /* animation: subMenu 1s;
+  @keyframes subMenu{
+    from {
+      left: -500px
+    }
+    to {
+      left: 0
+    }
+  } */}
 `;
 
 const Menu = styled.ul`
@@ -26,9 +34,9 @@ const MyNavLink = styled(NavLink)`
     font-size: 20px;
   }
 `;
-function SideMenu() {
+function SideMenu(props) {
   return (
-    <Section>
+    <Section {...props}>
       <nav>
         <Menu>
           <li>

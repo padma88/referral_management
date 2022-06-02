@@ -25,7 +25,8 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await loginService(formValue).then(response => {
-      dispatch(login(response.data.statusCode === 200))
+      dispatch(login(response.data.statusCode === 200));
+      localStorage.setItem("access-token", response.data.access_token);
     });
     navigate("/")
   };

@@ -7,7 +7,6 @@ import { store } from "./store/index";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css"
-import "./index.css";
 import "./assets/css/global.scss";
 
 import App from "./App";

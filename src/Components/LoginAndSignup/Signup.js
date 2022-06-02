@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 
 import { create } from "../../services/users";
-import { login } from "../../store/user";
 
 import styles from "./Style.module.scss";
 
@@ -18,10 +17,9 @@ function Signup() {
       lastName: formValue.lastName,
       email: formValue.email,
       password: formValue.password,
-      role: "SUPERADMIN"
+      role: "ADMIN"
     });
-    console.log(resp)
-    navigate("/login")
+    navigate("/")
   };
   const handleFormInput = (e) => {
     const { name, value } = e.target;
@@ -57,7 +55,7 @@ function Signup() {
             <button type="submit" className="mt-3 form-control btn btn-primary">Create your Account</button>
           </div>
           <div className={styles.registerLink}>
-            <span>Having an account already?</span><Link to="/login">Login</Link>
+            <span>Having an account already?</span><Link to="/">Login</Link>
           </div>
         </form>
       </section>
