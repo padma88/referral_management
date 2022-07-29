@@ -8,7 +8,7 @@ const FooterSection = styled.footer`
     width: 100%;
     padding: 1%;
     z-index: 3;
-    left: 11.5em;
+    left: 12em;
     padding: 0 1em;
     border-top: 1px solid #80808033;
     background: #fff

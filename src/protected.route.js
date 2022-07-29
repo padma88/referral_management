@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom"
-import Layout from "./Components/Layout";
+import Layout from "./Pages/Layout";
 
 function ProtectedRoutes({component}) {
   const isLoggedIn = localStorage.getItem("access-token");

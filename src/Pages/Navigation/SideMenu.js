@@ -6,7 +6,7 @@ const Section = styled.section.attrs(props => props)`
   padding: 2em;
   background: ${props => props.secondary};
   height: 100vh;
-  width: 10vh;
+  width: 10vw;
   min-width: fit-content;
   z-index: 1;
   ${'' /* animation: subMenu 1s;
@@ -46,7 +46,7 @@ function SideMenu(props) {
           </li>
           <li>
             <MyNavLink to="/users">
-              <i className="bi bi-hospital px-2"></i>All Users
+              <i className="bi bi-hospital px-2"></i>Users
             </MyNavLink>
           </li>
           <li>

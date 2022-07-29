@@ -6,7 +6,7 @@ import { ThemeContext } from "../../ThemeContext";
 const TableStyle = styled.table.attrs(props => props)`
 border: 1px solid;
 font-size: 0.9em;
-width: 85vw;
+width: 100%;
 padding: 100px;
 min-width: 300px;
 th,

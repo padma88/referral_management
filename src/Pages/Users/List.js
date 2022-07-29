@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import {
+  Row, Col
+} from "react-bootstrap"
 import Table from "../SharedComponents/Table";
 import TopArea from "./TopArea";
 
@@ -48,10 +51,12 @@ function Listing() {
   }, []);
 
   return (
-    <>
-      <TopArea />
-      <Table DATA={DATA} COLUMNS={COLUMNS}></Table>
-    </>
+    <Row>
+      <Col sm={12}>
+        <TopArea />
+        <Table DATA={DATA} COLUMNS={COLUMNS}></Table>
+      </Col>
+    </Row>
   );
 }
 

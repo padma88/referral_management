@@ -8,8 +8,8 @@ import { useContext } from "react";
 
 const Main = styled.main`
   position: relative;
-  left: 100px;
-  top: 84px;
+  top: 75px;
+  left: 200px;
 `;
 function Layout({ children }) {
   const colors = useContext(ThemeContext);
@@ -20,7 +20,7 @@ function Layout({ children }) {
           <>
             <Header {...colors} />
             <SideMenu {...colors}  />
-            <Main className="container">{children}</Main>
+            <Main className="rm-layout" {...colors}>{children}</Main>
             <Footer />
           </>
         )}

@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoudary";
 
-import Login from "./Components/LoginAndSignup/Login";
-import Signup from "./Components/LoginAndSignup/Signup";
-import Dashboard from "./Components/Dashboard";
-import List from "./Components/Users/List";
-import EditView from "./Components/Users/EditView";
+import Login from "./Pages/LoginAndSignup/Login";
+import Signup from "./Pages/LoginAndSignup/Signup";
+import Dashboard from "./Pages/Dashboard";
+import List from "./Pages/Users/List";
+import EditView from "./Pages/Users/EditView";
+import CreateUser from "./Pages/Users/CreateUser";
 
 import ProtectedRoutes from "./protected.route";
-import Layout from "./Components/Layout";
+import Layout from "./Pages/Layout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         />
         <Route path="/users">
           <Route path="" element={<ProtectedRoutes component={<List />} />} />
+          <Route path="create" element={<ProtectedRoutes component={<CreateUser />} />} />
           <Route
             path=":id"
             element={<ProtectedRoutes component={<EditView />} />}
